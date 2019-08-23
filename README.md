@@ -11,7 +11,7 @@ This lab is meant to build your skills in creating a Rails API and reinforce you
 Your goal in this assignment is to build a REST-ful API using Rails and then create a React App that successfully retrieves data from your API. You will:
 
 - Create a `students api` that has the ability to read all and/or read one student(s).  
-- Connect to your API with a Student App React frontend.
+- Connect to your API with a React frontend.
 - Style your Student App.    
 - Deploy your API and your Student App.  
 
