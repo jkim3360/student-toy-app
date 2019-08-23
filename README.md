@@ -6,7 +6,7 @@
 
 This lab is meant to reinforce your knowledge of React and build your skills in creating a Rails api.
 
-<iframe src="https://giphy.com/embed/l4EoOPJMXozky47f2" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/heyarnold-hey-arnold-nicksplat-l4EoOPJMXozky47f2">via GIPHY</a></p>
+![](https://media.giphy.com/media/l4EoOPJMXozky47f2/giphy.gif)
 
 ## DELIVERABLE:
 
