@@ -1,21 +1,19 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) SOFTWARE ENGINEERING IMMERSIVE
 
-# rails-api-with-react-lab
 
-#### RAILS API (with REACT FRONTEND) LAB
-
-This lab is meant to reinforce your knowledge of React and build your skills in creating a Rails api.
+# LAB: Rails API with React frontend
+This lab is meant to build your skills in creating a Rails API and reinforce your foundation in React.
 
 ![](https://media.giphy.com/media/l4EoOPJMXozky47f2/giphy.gif)
 
 ## DELIVERABLE:
 
-Your goal in this lab is to create a REST-ful api in Rails and accessing that API with a React frontend.
+Your goal in this assignment is to build a REST-ful API using Rails and then create a React App that successfully retrieves data from your API. You will:
 
-Create a "Student's API" that has the ability to Read All and Read One students.
-Connect your Rails backend with a React frontend. Display all of the Students.
-Style.  
-Deploy.
+- Create a `students api` that has the ability to read all and/or read one student(s).  
+- Connect to your API with a Student App React frontend.
+- Style your Student App.    
+- Deploy your API and your Student App.  
 
 ## Getting started with Rails
 
@@ -61,7 +59,3 @@ Time to add the React Frontend to your Rails API.
 - [Rails API with React](https://git.generalassemb.ly/sei-nyc-cicadas/rails-api-with-react) lesson
 - [Rails routes](https://www.railstutorial.org/book/filling_in_the_layout#sec-rails_routes) chapter
 - [react-api](https://git.generalassemb.ly/sei-nyc-cicadas/react-api-practice) practice
-
-## Bonus
-
-(?)
