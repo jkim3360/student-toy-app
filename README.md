@@ -52,7 +52,7 @@ Time to add the React Frontend to your Rails API.
 1. Install dependencies and properly configure Cors.
 1. Make a route to display all students.
 1. Make a route that displays one student.
-1. Style: flex-box, grid, third-party library, etc.
+1. Style: **flex-box**, grid, third-party library, etc.
 1. Bring it together -> Deploy your beautiful `student-app`!
 
 ## Tips:
