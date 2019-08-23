@@ -20,7 +20,7 @@ Your goal in this assignment is to build a REST-ful API using Rails and then cre
 1. Fork
 1. Create a feature branch
 1. Clone
-1. Run `rails new student-app --api -G --database=postgresql`
+1. Run `rails new . --api -G --database=postgresql`
 1. Seed your rails api with data found in the `seed` section below.
 1. Create `index` and `show` methods for your API.
 
