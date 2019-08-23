@@ -48,7 +48,7 @@ puts "#{Student.count} students created!"
 
 Time to add the React Frontend to your Rails API.
 
-1. After setting up your API, run `create-react-app client` in the root of your Rails project.
+1. Run `create-react-app client` in the root of your Rails project.
 1. Install dependencies and properly configure Cors.
 1. Make a route to display all students.
 1. Make a route that displays one student.
