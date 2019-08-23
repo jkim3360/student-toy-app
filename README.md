@@ -10,16 +10,17 @@ This lab is meant to build your skills in creating a Rails API and reinforce you
 
 Your goal in this assignment is to build a REST-ful API using Rails and then create a React App that successfully retrieves data from your API. You will:
 
-- Create a `students api` that has the ability to read all and/or read one student(s).  
+- Create a `students app` that has the ability to read all and/or read one student(s).  
 - Connect to your API with a React frontend.
-- Style your Student App.    
-- Deploy your API and your Student App.  
+- Style your app.    
+- Deploy your app.  
 
 ## Getting started with Rails
 
 1. Fork
 1. Create a feature branch
 1. Clone
+1. Run `rails new . --api -G --database=postgresql`
 1. Seed your rails api with data found in the `seed` section below.
 1. Create `index` and `show` methods for your API.
 
