@@ -13,7 +13,7 @@ Your goal in this assignment is to build a REST-ful API using Rails and then cre
 - Create a `students app` that has the ability to read all and/or read one student(s).  
 - Connect to your API with a React frontend.
 - Style your app.    
-- Deploy your app.  
+- Deploy your app (Rails API + React client).  
 
 ## Getting started with Rails
 
