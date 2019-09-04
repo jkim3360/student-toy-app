@@ -55,6 +55,27 @@ Time to add the React Frontend to your Rails API.
 1. Style: **flex-box**, grid, third-party library, etc.
 1. Bring it together -> Deploy your beautiful student api and client from the `rails-api-with-react-lab` folder!
 
+## Deploy Rails & React App
+
+Deploy backend Rails server to Heroku:
+
+- `heroku create app_name`
+- `git push heroku master`
+- `heroku run rails db:migrate`
+- `heroku run rails db:seed`
+- `heroku open` to take us to the url link for our backend server.
+
+Deploy frontend React to surge:
+
+- replace `http://localhost:3000` on line 18 of our App.js with a link to our heroku backend server.
+in terminal:
+- `cd client`
+- `npm run build`
+- `cd build`
+- `mv index.html 200.html`
+- `surge`
+- follow the prompts to get the link to the deployed site.
+
 ## Tips:
 
 - [Rails API with React](https://git.generalassemb.ly/sei-nyc-cicadas/rails-api-with-react) lesson
