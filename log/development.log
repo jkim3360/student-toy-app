@@ -1,0 +1,579 @@
+  [1m[35m (586.0ms)[0m  [1m[35mCREATE DATABASE "rails_api_with_react_lab_development" ENCODING = 'unicode'[0m
+  [1m[35m (426.5ms)[0m  [1m[35mCREATE DATABASE "rails_api_with_react_lab_test" ENCODING = 'unicode'[0m
+  [1m[35m (45.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (45.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8043790306107528840)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStudents (20190904154432)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (67.4ms)[0m  [1m[35mCREATE TABLE "students" ("id" bigserial primary key, "name" character varying, "description" character varying, "photo" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190904154432"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-09-04 15:44:57.006680"], ["updated_at", "2019-09-04 15:44:57.006680"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8043790306107528840)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-09-04 11:45:21 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/daeho/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/daeho/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.4ms | Allocations: 481)
+Completed 200 OK in 21ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 2642)
+
+
+Started GET "/students" for ::1 at 2019-09-04 11:45:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/students"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/students" for ::1 at 2019-09-04 11:48:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/students"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/students" for ::1 at 2019-09-04 11:48:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/students"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/students" for ::1 at 2019-09-04 11:50:18 -0400
+  
+ArgumentError ('' is not a supported controller name. This can lead to potential routing problems. See https://guides.rubyonrails.org/routing.html#specifying-a-controller-to-use):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/students" for ::1 at 2019-09-04 11:50:19 -0400
+  
+SyntaxError (/Users/daeho/dev/GA/HW/rails-api-with-react-lab/app/controllers/students_controller.rb:10: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/students_controller.rb:10: syntax error, unexpected end-of-input, expecting end
+app/controllers/students_controller.rb:10: syntax error, unexpected end-of-input, expecting end
+Started GET "/students" for ::1 at 2019-09-04 11:50:19 -0400
+  
+SyntaxError (/Users/daeho/dev/GA/HW/rails-api-with-react-lab/app/controllers/students_controller.rb:10: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/students_controller.rb:10: syntax error, unexpected end-of-input, expecting end
+app/controllers/students_controller.rb:10: syntax error, unexpected end-of-input, expecting end
+Started GET "/students" for ::1 at 2019-09-04 11:50:20 -0400
+  
+SyntaxError (/Users/daeho/dev/GA/HW/rails-api-with-react-lab/app/controllers/students_controller.rb:10: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/students_controller.rb:10: syntax error, unexpected end-of-input, expecting end
+app/controllers/students_controller.rb:10: syntax error, unexpected end-of-input, expecting end
+Started GET "/students" for ::1 at 2019-09-04 11:50:29 -0400
+  
+SyntaxError (/Users/daeho/dev/GA/HW/rails-api-with-react-lab/app/controllers/students_controller.rb:10: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/students_controller.rb:10: syntax error, unexpected end-of-input, expecting end
+app/controllers/students_controller.rb:10: syntax error, unexpected end-of-input, expecting end
+Started GET "/students" for ::1 at 2019-09-04 11:50:29 -0400
+Processing by StudentsController#index as HTML
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 516)
+
+
+Started GET "/students" for ::1 at 2019-09-04 11:50:30 -0400
+Processing by StudentsController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 31)
+
+
+Started GET "/students" for ::1 at 2019-09-04 11:50:30 -0400
+Processing by StudentsController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 38)
+
+
+Started GET "/students" for ::1 at 2019-09-04 11:50:31 -0400
+Processing by StudentsController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 31)
+
+
+Started GET "/students" for ::1 at 2019-09-04 11:50:31 -0400
+Processing by StudentsController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 38)
+
+
+Started GET "/" for ::1 at 2019-09-04 11:50:45 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/daeho/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/daeho/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.6ms | Allocations: 195)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 735)
+
+
+Started GET "/student" for ::1 at 2019-09-04 11:50:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/student"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/student/" for ::1 at 2019-09-04 11:50:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/student"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/students/" for ::1 at 2019-09-04 11:50:55 -0400
+Processing by StudentsController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 31)
+
+
+Started GET "/students/" for ::1 at 2019-09-04 11:51:00 -0400
+Processing by StudentsController#index as HTML
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 31)
+
+
+Started GET "/student/" for ::1 at 2019-09-04 11:51:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/student"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/students/" for ::1 at 2019-09-04 11:51:53 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (3.1ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 2.4ms | ActiveRecord: 7.1ms | Allocations: 1673)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (40.9ms)[0m  [1m[32mINSERT INTO "students" ("name", "description", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Arnold Shortman"], ["description", "Thinks people are inherently good, idealist, helpful, is not wearing a kilt but rather it is a long shirt that extends past his green sweater, impractically-shaped nogin"], ["photo", "https://upload.wikimedia.org/wikipedia/en/2/2a/HeyArnold%21.jpg"], ["created_at", "2019-09-04 15:52:04.477152"], ["updated_at", "2019-09-04 15:52:04.477152"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("name", "description", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gerald Martin Johanssen"], ["description", "Athletic, loyal, street-smart, class president, hair icon"], ["photo", "https://upload.wikimedia.org/wikipedia/en/d/d6/Gerald_Johanssen.png"], ["created_at", "2019-09-04 15:52:04.523225"], ["updated_at", "2019-09-04 15:52:04.523225"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.4ms)[0m  [1m[32mINSERT INTO "students" ("name", "description", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Helga G. Pataki"], ["description", "rough, cynical, favorite color is pink, closet poet, expert shrine-maker"], ["photo", "https://upload.wikimedia.org/wikipedia/en/a/ac/Helga_Pataki.jpg"], ["created_at", "2019-09-04 15:52:04.528015"], ["updated_at", "2019-09-04 15:52:04.528015"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("name", "description", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Harold Berman"], ["description", "tough-talker, bully, body-shamed, acts out, relatively harmless"], ["photo", "https://www.cartoonbucket.com/wp-content/uploads/2016/01/Harold-Berman-Eating-Ice-Cream-cc15205.jpg"], ["created_at", "2019-09-04 15:52:04.539521"], ["updated_at", "2019-09-04 15:52:04.539521"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("name", "description", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Eugene Horowitz"], ["description", "accident prone, cheery, the class jinx, wears socks with sandals"], ["photo", "https://vignette.wikia.nocookie.net/heyarnold/images/9/99/EAFDB121-EC13-4F12-849E-37037A95E3D6.png/revision/latest?cb=20190816022130"], ["created_at", "2019-09-04 15:52:04.547460"], ["updated_at", "2019-09-04 15:52:04.547460"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("name", "description", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Phoebe Heyerdahl"], ["description", "smartest person in the room, shy, makes \"long sweater\" an outfit"], ["photo", "https://vignette.wikia.nocookie.net/heyarnold/images/9/93/Phoebe_%28classic%29.png/revision/latest?cb=20190816022206"], ["created_at", "2019-09-04 15:52:04.557338"], ["updated_at", "2019-09-04 15:52:04.557338"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "students"[0m
+Started GET "/students/" for ::1 at 2019-09-04 11:52:09 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 2.9ms | Allocations: 5233)
+
+
+Started GET "/students/" for ::1 at 2019-09-04 11:53:16 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1657)
+
+
+Started GET "/students/1" for ::1 at 2019-09-04 11:53:17 -0400
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:8:in `show'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 2770)
+
+
+Started GET "/" for ::1 at 2019-09-04 12:25:41 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/daeho/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/daeho/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.7ms | Allocations: 7)
+Completed 200 OK in 11ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 235)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:25:46 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.6ms | Allocations: 1712)
+
+
+Started GET "/" for ::1 at 2019-09-04 12:26:40 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/daeho/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/daeho/.rvm/gems/ruby-2.6.3/gems/railties-6.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 233)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:27:16 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.9ms | Allocations: 1651)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:27:19 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (17.1ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 7.2ms | ActiveRecord: 17.1ms | Allocations: 1651)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:28:40 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (1.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 1.3ms | Allocations: 1651)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:29:02 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (6.9ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 2.6ms | ActiveRecord: 6.9ms | Allocations: 1651)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:29:13 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (2.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 2.3ms | Allocations: 1651)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:29:16 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (8.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 2.6ms | ActiveRecord: 8.6ms | Allocations: 1651)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:29:36 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1651)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:29:59 -0400
+  [1m[35m (41.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 5.9ms | ActiveRecord: 4.6ms | Allocations: 6082)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:30:58 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (114.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 117ms (Views: 2.5ms | ActiveRecord: 114.3ms | Allocations: 1669)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:31:00 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (120.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 123ms (Views: 2.3ms | ActiveRecord: 120.6ms | Allocations: 1669)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:31:01 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (3.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 3.0ms | Allocations: 1669)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:31:29 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (3.7ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 3.7ms | Allocations: 1669)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:31:30 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.5ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:31:50 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 6.3ms | ActiveRecord: 4.0ms | Allocations: 6081)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:33:26 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (1.7ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 1.7ms | Allocations: 1669)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:33:30 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (3.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 3.3ms | Allocations: 1669)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:34:50 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms | Allocations: 1669)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:34:52 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (6.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 3.1ms | ActiveRecord: 6.6ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:34:55 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (12.8ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 2.4ms | ActiveRecord: 12.8ms | Allocations: 1669)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:35:10 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:35:17 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:35:23 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:35:24 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (3.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 3.0ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:35:52 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (27.8ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 30ms (Views: 2.3ms | ActiveRecord: 27.8ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:35:53 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:35:54 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (16.7ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 3.9ms | ActiveRecord: 16.7ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:35:58 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (58.9ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 63ms (Views: 4.1ms | ActiveRecord: 58.9ms | Allocations: 1653)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:35:59 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.6ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:36:05 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (9.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 3.0ms | ActiveRecord: 9.2ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:39:05 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:39:20 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:39:45 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 1.0ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:40:01 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:40:07 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (4.7ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 37ms (Views: 31.6ms | ActiveRecord: 4.7ms | Allocations: 1655)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:40:10 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 1.0ms | Allocations: 1652)
+
+
+Started GET "/students" for ::1 at 2019-09-04 12:40:22 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (7.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 2.0ms | ActiveRecord: 7.0ms | Allocations: 1652)
+
+
